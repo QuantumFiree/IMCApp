@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/textMCI"
-        android:layout_width="217dp"
+        android:layout_width="216dp"
         android:layout_height="80dp"
         android:background="@drawable/view_result"
         android:fontFamily="sans-serif-black"
@@ -59,6 +59,7 @@
         android:layout_marginTop="75dp"
         android:background="@drawable/edittext_background"
         android:gravity="center"
+        android:inputType="numberDecimal"
         android:hint="(Kilogramos):"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,6 +73,7 @@
         android:layout_height="51dp"
         android:background="@drawable/edittext_background"
         android:gravity="center"
+        android:inputType="numberDecimal"
         android:hint="(Metros)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/inputWeight"
@@ -127,7 +129,7 @@
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Switch"
+        android:text="Tema"
         app:layout_constraintBottom_toTopOf="@+id/textMCI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
