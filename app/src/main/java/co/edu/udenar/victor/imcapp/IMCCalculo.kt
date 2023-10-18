@@ -6,6 +6,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.graphics.Color
+import android.widget.Switch
+import android.content.res.Configuration
+import androidx.appcompat.app.AppCompatDelegate
 
 
 class IMCCalculo : AppCompatActivity() {
@@ -31,6 +34,8 @@ class IMCCalculo : AppCompatActivity() {
             // Llamar a la función para calcular el IMC
             calcularIMC()
         }
+
+        changeTheme()
     }
 
     private fun calcularIMC() {
@@ -67,5 +72,19 @@ class IMCCalculo : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun changeTheme() {
+        val themeButton = findViewById<Switch>(R.id.switch1) // Reemplaza "Button" con el tipo de tu botón
+        themeButton.setOnClickListener {
+            val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+            val newNightMode = if (currentNightMode == Configuration.UI_MODE_NIGHT_NO) {
+                AppCompatDelegate.MODE_NIGHT_YES // Cambiar al tema oscuro
+            } else {
+                AppCompatDelegate.MODE_NIGHT_NO // Cambiar al tema claro
+            }
+            AppCompatDelegate.setDefaultNightMode(newNightMode)
+            recreate() // Recarga la actividad para aplicar el nuevo tema
+        }
     }
 }
